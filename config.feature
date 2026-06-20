@@ -9,31 +9,39 @@ Para depois inserir no carrinho
 Contexto:
 Dado que eu acesse a página de produto
 
-Cenário: Compra do produto
-Quando seleciono cor, tamanho e quantidade
+Esquema do Cenário: Compra do produto com configuração completa
+Quando seleciono a "<cor>", "<tamanho>" e "<quantidade>"
 E clico em "COMPRAR"
 Então devo ser redirecionado para tela de checkout
 
-Cenário: Tentar adicionar produto sem preencher a cor
-Quando não seleciono cor
-E seleciono o tamanho e quantidade
+Exemplos:
+| cor      | tamanho | quantidade |
+| Azul     | P       | 1          |
+| Vermelho | M       | 3          |
+| Preto    | G       | 5          |
+| Branco   | GG      | 10         |
+
+Esquema do Cenário: Tentar comprar sem preencher campo obrigatório
+Quando não seleciono nenhum campo"
+E preencho os demais campos corretamente
 Então o botão de "COMPRAR" não deve ser clicável
 
-Cenário: Tentar adicionar produto sem preencher o tamanho
-Quando não seleciono cor
-E seleciono o cor e quantidade
-Então o botão de "COMPRAR" não deve ser clicável
-
-Cenário: Tentar adicionar produto sem preencher a quantidade
-Quando não seleciono quantidade
-E seleciono o cor e tamanho
-Então o botão de "COMPRAR" não deve ser clicável
-
-Cenário: Tentar selecionar quantidade maior que o permitido
-Quando seleciono uma quantidade maior que 10
+Esquema do Cenário: Tentar selecionar quantidade inválida
+Quando seleciono a "<quantidade>"
 Então o sistema não deve permitir a seleção
 
-Cenário: Limpar seleção do produto
-Dado que selecionei cor, tamanho e quantidade
+Exemplos:
+| quantidade |
+| 11         |
+| 50         |
+| 99         |
+
+Esquema do Cenário: Limpar seleção do produto
+Dado que selecionei "<cor>", "<tamanho>" e "<quantidade>"
 Quando clico no botão "Limpar"
 Então todos os campos devem voltar ao estado original
+
+Exemplos:
+| cor      | tamanho | quantidade |
+| Azul     | P       | 2          |
+| Vermelho | GG      | 7          |
