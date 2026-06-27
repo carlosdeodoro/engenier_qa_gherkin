@@ -9,21 +9,21 @@ Para depois inserir no carrinho
 Contexto:
 Dado que eu acesse a página de produto
 
-Esquema do Cenário: Compra do produto com configuração completa
-Quando seleciono a <cor>, tamanho e quantidade
+Cenário: Compra do produto com configuração completa
+Quando seleciono a cor, tamanho e quantidade
 E clico em "COMPRAR"
 Então devo ser redirecionado para tela de checkout
 
-Esquema do Cenário: Tentar comprar sem preencher campo obrigatório
+Cenário: Tentar comprar sem preencher campo obrigatório
 Quando não seleciono nenhum campo
 E preencho os demais campos corretamente
 Então o botão de "COMPRAR" não deve ser clicável
 
-Esquema do Cenário: Tentar selecionar quantidade inválida
+Cenário: Tentar selecionar quantidade inválida
 Quando seleciono a quantidade
 Então o sistema não deve permitir a seleção
 
-Esquema do Cenário: Limpar seleção do produto
+Cenário: Limpar seleção do produto
 Dado que selecionei cor, tamanho e quantidade
 Quando clico no botão "Limpar"
 Então todos os campos devem voltar ao estado original

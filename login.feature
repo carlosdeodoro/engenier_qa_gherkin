@@ -31,13 +31,14 @@ Quando deixo os campos de usuário e senha em branco
 E clico em "LOGIN"
 Então devo visualizar a mensagem "Usuário ou senha inválidos"
 
-Cenário: Validar regras de login
+Esquema do Cenário: Validar regras de login
 Quando eu digitar <usuario> e <senha>
 E clicar em "LOGIN"
 Então deve exibir a <mensagem>
 
 Exemplos:
 | usuario             | senha       | mensagem                            |
+| carlos@ebac.com.br  | senha*123   | "Bem vindo, Carlos Deodoro"         |
 | carlos@ebac.com.br  | senha123    | "Usuário ou senha inválidos"        |
 | error@ebac.com.br   | senhaerrada | "Usuário ou senha inválidos"        |
 |                     | 123*456     | "Por favor informe um email valido" |
